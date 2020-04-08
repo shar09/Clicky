@@ -19,7 +19,15 @@ class App extends Component {
       <Wrapper>
         <Navbar result = {result} score = {score} topScore = {topScore}/>
         <Header />
-        <Container />
+        { characters.map(character => (
+          <Container 
+            key = {character.id}
+            name = {character.name}
+            id = {character.id}
+            img = {character.img}
+            clicked = {character.clicked}         
+          />
+        ))}
       </Wrapper>
     );
   }

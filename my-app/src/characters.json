@@ -2,7 +2,73 @@
   {
     "id": 1,
     "name": "bertman",
-    "img": "./images/bertman.jpeg",
+    "img": "../../images/bertman.jpeg",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "beth",
+    "img": "../../images/beth.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "name": "cleveland",
+    "img": "../../images/cleveland.jpeg",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "name": "eric",
+    "img": "../../images/eric.webp",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "name": "jerry",
+    "img": "../../images/jerry.png",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "name": "kyle",
+    "img": "../../images/kyle.png",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "name": "meg",
+    "img": "../../images/meg.jpeg",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "name": "morty",
+    "img": "../../images/morty.jpeg",
+    "clicked": false
+  },
+  {
+    "id": 9,
+    "name": "peter",
+    "img": "../../images/peter.jpeg",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "name": "rick",
+    "img": "../../images/rick.png",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "name": "stewie",
+    "img": "../../images/stewie.png",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "name": "summer",
+    "img": "../../images/summer.jpeg",
     "clicked": false
   }
 ]

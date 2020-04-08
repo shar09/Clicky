@@ -1,9 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function Container() {
+function Container(props) {
    return(
-      <div></div>
+      <div className="container">
+         <div className="card" key = {props.id}> 
+            <img src = {props.img} alt= {props.name} />
+         </div>
+      </div>
    );
 }
 
