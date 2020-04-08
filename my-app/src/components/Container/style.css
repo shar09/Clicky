@@ -1,7 +1,15 @@
 .container {
     display: flex;
-    flex-direction: row;
-    margin: 25px;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    margin: 20px;
 }
 
 .card> img {
@@ -17,4 +25,4 @@
 
 .card> img:hover {
     transform: scale(1.05);
-  }
+}

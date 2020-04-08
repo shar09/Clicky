@@ -4,9 +4,11 @@ import "./style.css";
 function Container(props) {
    return(
       <div className="container">
-         <div className="card" key = {props.id}> 
-            <img src = {props.img} alt= {props.name} />
+        { props.characterData.map(character => (         
+         <div className="card" key = {character.id}> 
+            <img src = {character.img} alt= {character.name} />
          </div>
+         ))}
       </div>
    );
 }
