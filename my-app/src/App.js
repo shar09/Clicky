@@ -3,6 +3,7 @@ import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Container from "./components/Container";
+import Footer from "./components/Footer";
 import characters from "./characters.json";
 
 class App extends Component {  
@@ -20,6 +21,7 @@ class App extends Component {
         <Navbar result = {result} score = {score} topScore = {topScore}/>
         <Header />
         <Container characterData = {characters}/>
+        <Footer/>
       </Wrapper>
     );
   }
