@@ -7,12 +7,31 @@ import Footer from "./components/Footer";
 import characters from "./characters.json";
 
 class App extends Component {  
-  state = {
+  constructor(props) {
+  super(props)
+  this.state = {
     characters,
     score: 0,
     topScore: 0,
     result: "Click an image to begin!"
   };
+  this.handleClick = this.handleClick.bind(this);
+}
+
+  handleClick(id) {
+    const clicked = this.state.characters.filter(character => {
+      return character.id === id;
+    });
+    console.log(clicked);
+    let score = this.state.score + 1;
+    let topScore = Math.max(this.state.score, this.state.topScore + 1);
+    this.setState({
+      characters,
+      score,
+      topScore,
+      result: "You clicked!"
+    })
+  }
   
   render() {
     const { characters, score, topScore, result } = this.state;
@@ -20,7 +39,7 @@ class App extends Component {
       <Wrapper>
         <Navbar result = {result} score = {score} topScore = {topScore}/>
         <Header />
-        <Container characterData = {characters}/>
+        <Container characterData = {characters} handleClick = {this.handleClick}/>
         <Footer/>
       </Wrapper>
     );
