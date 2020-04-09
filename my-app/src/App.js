@@ -19,10 +19,12 @@ class App extends Component {
 }
 
   handleClick(id) {
-    const clicked = this.state.characters.filter(character => {
-      return character.id === id;
+    const characters = this.state.characters.filter(character => {
+      if(character.id === id) {
+        character['clicked'] = true;
+      }
+      return character;
     });
-    console.log(clicked);
     let score = this.state.score + 1;
     let topScore = Math.max(this.state.score, this.state.topScore + 1);
     this.setState({
@@ -31,6 +33,7 @@ class App extends Component {
       topScore,
       result: "You clicked!"
     })
+    console.log(characters);
   }
   
   render() {
