@@ -13,46 +13,57 @@ class App extends Component {
   this.initialState = {
     characters,
     score: 0,
-    topScore: 0,
     result: "Click an image to begin!"
   };
-  this.state = this.initialState;
+  this.state = {
+    initialState: this.initialState,   
+    topScore: 0
+  };
   this.handleClick = this.handleClick.bind(this);
   console.log(this);
 }
 
   handleClick(id) {
-    for(let character of this.state.characters) {
+    for(let character of this.state.initialState.characters) {
       if(character.id === id && character.clicked === true) {
         console.log(character.clicked);
-        return this.setState(this.initialState);
+        console.log(this.initialState);
+        for(let character of this.state.initialState.characters) {
+          character.clicked = false;
+        }
+        return this.setState({
+          initialState: this.initialState,
+          topScore: this.state.topScore
+        });
       }
     }
 
-    const characters = this.state.characters.map(character => {
+    const characters = this.state.initialState.characters.map(character => {
       if(character.id === id) {
         character['clicked'] = true;
       }
       return character;
     });
-
-    let score = this.state.score + 1;
+    let score = this.state.initialState.score + 1;
+    console.log(score);
     let topScore = this.state.topScore;
     topScore = Math.max(score, topScore); 
     this.setState({
-      characters,
-      score,
-      topScore,
-      result: "You clicked!"
+      initialState: {
+        characters,
+        score,
+        result: "You clicked!"
+      },
+      topScore
     })
     console.log(characters);
   }
   
   render() {
-    const { characters, score, topScore, result } = this.state;
+    const { characters, score, result } = this.state.initialState;
     return (
       <Wrapper>
-        <Navbar result = {result} score = {score} topScore = {topScore}/>
+        <Navbar result = {result} score = {score} topScore = {this.state.topScore}/>
         <Header />
         <Container characterData = {characters} handleClick = {this.handleClick}/>
         <Footer/>
