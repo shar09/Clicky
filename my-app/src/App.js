@@ -9,27 +9,36 @@ import characters from "./characters.json";
 class App extends Component {  
   constructor(props) {
   super(props)
-  this.state = {
+
+  this.initialState = {
     characters,
     score: 0,
     topScore: 0,
     result: "Click an image to begin!"
   };
+  this.state = this.initialState;
   this.handleClick = this.handleClick.bind(this);
   console.log(this);
 }
 
   handleClick(id) {
+    for(let character of this.state.characters) {
+      if(character.id === id && character.clicked === true) {
+        console.log(character.clicked);
+        return this.setState(this.initialState);
+      }
+    }
+
     const characters = this.state.characters.map(character => {
       if(character.id === id) {
         character['clicked'] = true;
       }
       return character;
     });
+
     let score = this.state.score + 1;
     let topScore = this.state.topScore;
     topScore = Math.max(score, topScore); 
-    console.log(topScore);
     this.setState({
       characters,
       score,
