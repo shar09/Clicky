@@ -16,17 +16,20 @@ class App extends Component {
     result: "Click an image to begin!"
   };
   this.handleClick = this.handleClick.bind(this);
+  console.log(this);
 }
 
   handleClick(id) {
-    const characters = this.state.characters.filter(character => {
+    const characters = this.state.characters.map(character => {
       if(character.id === id) {
         character['clicked'] = true;
       }
       return character;
     });
     let score = this.state.score + 1;
-    let topScore = Math.max(this.state.score, this.state.topScore + 1);
+    let topScore = this.state.topScore;
+    topScore = Math.max(score, topScore); 
+    console.log(topScore);
     this.setState({
       characters,
       score,
