@@ -86,7 +86,7 @@ class App extends Component {
       <Wrapper>
         <Navbar result = {result} score = {score} topScore = {this.state.topScore}/>
         <Header />
-        <Container characterData = {characters} handleClick = {this.handleClick}/>
+        <Container characterData = {characters} handleClick = {this.handleClick} shake={!score && this.state.topScore}/>
         <Footer/>
       </Wrapper>
     );

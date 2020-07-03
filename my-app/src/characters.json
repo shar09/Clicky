@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "bertman",
-    "img": "images/bertman.jpeg",
+    "img": "./images/bertman.jpeg",
     "clicked": false
   },
   {
